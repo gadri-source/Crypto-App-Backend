@@ -1,4 +1,5 @@
 import dotenv from "dotenv";
+dotenv.config();
 
 
 import express from "express";
@@ -15,7 +16,9 @@ import cryptoRoutes from "./routes/cryptoRoutes.js";
 
 
 const app = express();
-dotenv.config();
+
+app.use(express.json());
+
 
 // Middlewares (cors first)
 app.use(
@@ -33,7 +36,7 @@ app.use(
     credentials: true,
   })
 );
-app.use(express.json());
+
 app.use(cookieParser());
 
 // Routes
