@@ -1,5 +1,5 @@
 import dotenv from "dotenv";
-dotenv.config(); // ← Must be FIRST
+
 
 import express from "express";
 import mongoose from "mongoose";
@@ -15,6 +15,7 @@ import cryptoRoutes from "./routes/cryptoRoutes.js";
 
 
 const app = express();
+dotenv.config();
 
 // Middlewares (cors first)
 app.use(
